@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <!DOCTYPE HTML>
+  <html>
+  <body>
+      <style>
+  
+  .great_btn {
+   background: linear-gradient(to bottom, #3323c4 0%,#1a0e86 100%);
+   color: #fff;
+   font-size: 16px;
+   text-shadow: 0 1px 0 #757575;
+   padding: 4px 0 5px 0;
+   margin: 0;
+   cursor: pointer;
+   border: 0;
+   border-top: 1px solid #3843dd;
+   border-right: 1px solid #1a0e86;
+   border-left: 1px solid #1a0e86;
+   border-bottom: 1px solid #1a0e86;
+   box-shadow: 0 -1px 0 #1a0e86, 0 1px 0 #fff;
+   width: 85px;
+   border-radius: 2px;
+  }
+  
+  input {
+    font-size: 16px;
+    padding: 6px;
+    width: 150px;
+    border: none;
+    border-bottom: 1px solid #ccc;
+  }
+  input:focus {
+    outline: none;
+  }
+  
+        </style> 
+        <table id="table">
+            <tr><td><img src="E:\JAVA\rock\rock.jpg" style='width: 100px;height: 100px'/>
+              <input id="butt1" class='great_btn' type="button" value="Вибрати"/>
+            <td><input id="butt01" class='great_btn' type="button" value="Вибрати"/>
+              <img src="E:\JAVA\rock\rock.jpg" style='width: 100px;height: 100px'/></td>
+
+            </td></tr>
+      
+            <tr><td><img src="E:\JAVA\rock\paper.jpg" style='width: 100px;height: 100px'/>
+              <input id="butt2" class='great_btn' type="button" value="Вибрати"/>
+              <td><input id="butt02" class='great_btn' type="button" value="Вибрати"/>
+                <img src="E:\JAVA\rock\paper.jpg" style='width: 100px;height: 100px'/></td>
+            </td></tr>
+      
+            <tr><td><img src="E:\JAVA\rock\nog.jpg" style='width: 100px;height: 100px'/>
+              <input id="butt3" class='great_btn' type="button" value="Вибрати"/>
+              <td><input id="butt03" class='great_btn' type="button" value="Вибрати"/>
+                <img src="E:\JAVA\rock\nog.jpg" style='width: 100px;height: 100px'/></td>
+            </td></tr>
+      
+            <tr><td><img src="E:\JAVA\rock\yash.jpg" style='width: 100px;height: 100px'/>
+              <input id="butt4" class='great_btn' type="button" value="Вибрати"/>
+              <td><input id="butt04" class='great_btn' type="button" value="Вибрати"/>
+                <img src="E:\JAVA\rock\yash.jpg" style='width: 100px;height: 100px'/></td>
+            </td></tr>
+      
+            <tr><td><img src="E:\JAVA\rock\spok.jpg" style='width: 100px;height: 100px'/>
+              <input id="butt5" class='great_btn' type="button" value="Вибрати"/>
+              <td><input id="butt05" class='great_btn' type="button" value="Вибрати"/>
+              <img src="E:\JAVA\rock\spok.jpg" style='width: 100px;height: 100px'/></td>   
+            </td></tr>   
+
+            <tr><td><div id="str6" style="margin-left: 25px;width: 200px;text-align: center;font-size: larger;"></div>  
+            <td><div id="str7" style="margin-left: 25px;width: 200px;text-align: center;font-size: larger;"></div></td></td></tr>  
+
+            <td><input id="butt6" class='great_btn' type="button" value="Win?"
+              style='width: 165px;height: 36px;font-size: x-large;font-weight: 700;margin-top: px;margin-left: 190px;'/>
+            <div id="str8" style="margin-left: 180px;width: 200px;text-align: center;font-size: larger;"></td>
+          </tr>   </table>
+  <script>
+    'use strict';
+    let firstPlayer;
+    let secondPlayer;
+
+    butt1.onclick = function() {
+    document.getElementById('str6').innerHTML="Вибір зроблено";
+    firstPlayer = "rock"
+    };
+    butt2.onclick = function() {
+    document.getElementById('str6').innerHTML="Вибір зроблено";
+    firstPlayer = "paper"
+    };
+    butt3.onclick = function() {
+    document.getElementById('str6').innerHTML="Вибір зроблено";
+    firstPlayer = "nog"
+    };
+    butt4.onclick = function() {
+    document.getElementById('str6').innerHTML="Вибір зроблено";
+    firstPlayer = "yash"
+    };
+    butt5.onclick = function() {
+    document.getElementById('str6').innerHTML="Вибір зроблено";
+    firstPlayer = "spok"
+    };
+    butt01.onclick = function() {
+    document.getElementById('str7').innerHTML="Вибір зроблено";
+    secondPlayer = "rock"
+    };
+    butt02.onclick = function() {
+    document.getElementById('str7').innerHTML="Вибір зроблено";
+    secondPlayer = "paper"
+    };
+    butt03.onclick = function() {
+    document.getElementById('str7').innerHTML="Вибір зроблено";
+    secondPlayer = "nog"
+    };
+    butt04.onclick = function() {
+    document.getElementById('str7').innerHTML="Вибір зроблено";
+    secondPlayer = "yash"
+    };
+    butt05.onclick = function() {
+    document.getElementById('str7').innerHTML="Вибір зроблено";
+    secondPlayer = "spok"
+    };
+    butt6.onclick = function() { 
+    secondPlayer = RandArray(arr);
+    document.getElementById('str7').innerHTML = secondPlayer;
+    win();
+    document.getElementById('str8').innerHTML = a;
+    };
+
+    let a
+    function win() {
+      if (firstPlayer === 'rock' && (secondPlayer === 'nog' || secondPlayer ==='yash')){
+        a = 'first player win'
+      };
+      if (firstPlayer === 'nog' && (secondPlayer === 'paper' || secondPlayer ==='yash')){
+        a = 'first player win'
+      };
+      if (firstPlayer === 'paper' && (secondPlayer === 'rock' || secondPlayer === 'spok')){
+        a = 'first player win'
+      };
+      if (firstPlayer === 'yash' && (secondPlayer === 'paper' || secondPlayer === 'spok')){
+        a = 'first player win'
+      };
+      if (firstPlayer === 'spok' && (secondPlayer === 'rock' || secondPlayer === 'nog')){
+        a = 'first player win'
+      };
+      if (firstPlayer === secondPlayer) {
+        a = 'draw'
+      };
+      if (secondPlayer === 'rock' && (firstPlayer === 'nog' || firstPlayer ==='yash')){
+        a = 'second player win'
+      };
+      if (secondPlayer === 'nog' && (firstPlayer === 'paper' || firstPlayer ==='yash')){
+        a = 'second player win'
+      };
+      if (secondPlayer === 'paper' && (firstPlayer === 'rock' || firstPlayer === 'spok')){
+        a = 'second player win'
+      };
+      if (secondPlayer === 'yash' && (firstPlayer === 'paper' || firstPlayer === 'spok')){
+        a = 'second player win'
+      };
+      if (secondPlayer === 'spok' && (firstPlayer === 'rock' || firstPlayer === 'nog')){
+        a = 'second player win'
+      };
+    }
+
+    let arr = ['rock','paper','nog','yash','spok'];
+function RandArray(array){
+    let rand = Math.random() * array.length | 0;
+    let rValue = array[rand];
+    return rValue;
+}
+
+
+
+  </script>
+
+</body>
+</html>

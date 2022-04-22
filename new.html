@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <script>
+'use strict';
+let allFilms = [];
+let mashaFilm = prompt('Марійко, зробіть ваш вибір','');
+let yarFilm = prompt('Ярослав, твоя черга','Гонка?');
+let denyaFilm = prompt('Деня, обирай давай уже','');
+let anjiFilm = prompt('Анжелка, шо дивимось?','');
+let alexFilm = prompt('Моя черга:)','');
+allFilms.push(mashaFilm);
+allFilms.push(yarFilm);
+allFilms.push(denyaFilm);
+allFilms.push(anjiFilm);
+allFilms.push(alexFilm);
+
+function RandArray(array){
+    let rand = Math.random()*array.length | 0;
+    let rValue = array[rand];
+    return rValue;
+}
+alert('І оскар отримує... ой щось не те. Сьогодні дивимось - ' + RandArray(allFilms) + '!!!');
+  </script>
+
+</body>
+</html>

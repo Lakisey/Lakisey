@@ -1,0 +1,186 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <style>
+
+.great_btn {
+ background: linear-gradient(to bottom, #0bc408 0%,#09a206 100%);
+ color: #fff;
+ font-size: 16px;
+ text-shadow: 0 1px 0 #757575;
+ padding: 4px 0 5px 0;
+ margin: 0;
+ cursor: pointer;
+ border: 0;
+ border-top: 1px solid #87c286;
+ border-right: 1px solid #0e780c;
+ border-left: 1px solid #0e780c;
+ border-bottom: 1px solid #0e780c;
+ box-shadow: 0 -1px 0 #0e780c, 0 1px 0 #fff;
+ width: 80px;
+ border-radius: 2px;
+}
+
+input {
+  font-size: 16px;
+  padding: 6px;
+  width: 150px;
+  border: none;
+  border-bottom: 1px solid #ccc;
+}
+input:focus {
+  outline: none;
+}
+
+      </style>    
+      
+
+  <table id="table">
+    <tr>
+      <td><input id="elem1" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt1" class='great_btn' type="button" value="Вибрати"/>
+        </td>
+
+      <td><input id="elem2" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt2" class='great_btn' type="button" value="Вибрати"/>
+        </td>
+
+      <td><input id="elem3" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt3" class='great_btn' type="button" value="Вибрати"/>
+        </td>
+
+      <td><input id="elem4" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt4" class='great_btn' type="button" value="Вибрати"/>
+        </td>
+
+      <td><input id="elem5" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt5" class='great_btn' type="button" value="Вибрати"/>
+        </td>          
+    </tr>
+    <tr>
+        <td><div id="str1"></td>
+  
+        <td>
+          <div id="str2"></td>
+  
+        <td>
+          <div id="str3"></td>
+  
+        <td>
+          <div id="str4"></td>
+  
+        <td>
+          <div id="str5"></td>          
+      </tr>
+    <tr><td><td><td><input id="butt6" class='great_btn' type="button" value="Random Film"
+        style='width: 165px;height: 36px;font-size: x-large;font-weight: 700;margin-top: 80px;margin-left: 40px;'/>
+      <div id="str6" style="margin-left: 25px;width: 200px;text-align: center;font-size: larger;"></td>
+    </tr>
+  </table>
+
+  <script>
+    'use strict';
+    const fon = document.querySelector("body");
+    fon.style.backgroundColor = 'mintcream';
+    
+
+    
+
+
+  butt1.onclick = function() {
+    let val1 = document.getElementById('elem1').value;
+    if (!val1.length){
+        document.getElementById('str1').innerHTML="Введіть фільм";   
+    }
+    else if(allFilms.includes(val1)) {
+        document.getElementById('str1').innerHTML="Цей фільм вже в списку";
+    }
+    else{
+    document.getElementById('str1').innerHTML="Фільм прийнято";
+    document.querySelector("#butt1").style.visibility = 'hidden';
+    allFilms.push(val1)
+  }
+};
+  butt2.onclick = function() {
+    let val2 = document.getElementById('elem2').value;
+    if (!val2.length){
+        document.getElementById('str2').innerHTML="Введіть фільм";   
+    }
+    else if(allFilms.includes(val2)) {
+        document.getElementById('str2').innerHTML="Цей фільм вже в списку";
+    }
+    else{
+    document.getElementById('str2').innerHTML="Фільм прийнято";
+    document.querySelector("#butt2").style.visibility = 'hidden';
+    allFilms.push(val2)
+    }
+  };
+  butt3.onclick = function() {
+    let val3 = document.getElementById('elem3').value;
+    if (!val3.length){
+        document.getElementById('str3').innerHTML="Введіть фільм";   
+    }
+    else if(allFilms.includes(val3)) {
+        document.getElementById('str3').innerHTML="Цей фільм вже в списку";
+    }
+    else{
+    document.getElementById('str3').innerHTML="Фільм прийнято";
+    document.querySelector("#butt3").style.visibility = 'hidden';
+    allFilms.push(val3)
+    }
+  };
+  butt4.onclick = function() {
+    let val4 = document.getElementById('elem4').value;
+    if (!val4.length){
+        document.getElementById('str4').innerHTML="Введіть фільм";   
+    }
+    else if(allFilms.includes(val4)) {
+        document.getElementById('str4').innerHTML="Цей фільм вже в списку";
+    }
+    else{
+    document.getElementById('str4').innerHTML="Фільм прийнято";
+    document.querySelector("#butt4").style.visibility = 'hidden';
+    allFilms.push(val4)
+    }
+  };
+  butt5.onclick = function() {
+    let val5 = document.getElementById('elem5').value;
+    if (!val5.length){
+        document.getElementById('str5').innerHTML="Введіть фільм";   
+    }
+    else if(allFilms.includes(val5)) {
+        document.getElementById('str5').innerHTML="Цей фільм вже в списку";
+    }
+    else{
+    document.getElementById('str5').innerHTML="Фільм прийнято";
+    document.querySelector("#butt5").style.visibility = 'hidden';
+    allFilms.push(val5)
+    }
+  };
+
+
+  
+
+let allFilms = []; 
+function RandArray(array){
+    let rand = Math.random() * array.length | 0;
+    let rValue = array[rand];
+    return rValue;
+}
+RandArray(allFilms);
+
+butt6.onclick = function() {
+    if (RandArray(allFilms) == undefined){
+        document.getElementById('str6').innerHTML="Фільми не вибрано"; 
+    }
+    else{
+    document.getElementById('str6').innerHTML="Дивимось фільм: " + RandArray(allFilms);
+    }
+  };
+
+
+
+  </script>
+</body>
+</html>
+

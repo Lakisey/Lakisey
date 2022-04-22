@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <script>
+'use strict';
+function checkFilm(film){
+    while(true){
+        if (!film.length) {
+        film = prompt('Вводь давай!!!','');
+    }
+        else break
+    }
+    allFilms.push(film)
+    };
+let allFilms = []; 
+let mashaFilm = prompt('Марійко, зробіть ваш вибір','');
+checkFilm(mashaFilm);
+alert('Гарний вибір!')
+let yarFilm = prompt('Ярослав, твоя черга','Гонка?');
+checkFilm(yarFilm);
+if (yarFilm == 'Гонка') {
+alert ('Дїйсно? скільки разів ти вже ту Гонку дивився?');
+} else {
+alert('Круасава');
+}
+let denyaFilm = prompt('Деня, обирай давай уже','');
+checkFilm(denyaFilm);
+alert('Нормас, в день пива все піде:)');
+let anjiFilm = prompt('Анжелка, шо дивимось?','');
+checkFilm(anjiFilm);
+alert('Охрініти який крутий фільм!')
+let alexFilm = prompt('Ну і фільмець від баті:)','');
+checkFilm(alexFilm);
+
+function RandArray(array){
+    let rand = Math.random() * array.length | 0;
+    let rValue = array[rand];
+    return rValue;
+}
+alert('І оскар отримує... ой щось не те. Сьогодні дивимось фільм - ' + RandArray(allFilms) + '!!!');
+  </script>
+
+</body>
+</html>

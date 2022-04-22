@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+    <style>
+
+.great_btn {
+ background: linear-gradient(to bottom, #0bc408 0%,#09a206 100%);
+ color: #fff;
+ font-size: 16px;
+ text-shadow: 0 1px 0 #757575;
+ padding: 4px 0 5px 0;
+ margin: 0;
+ cursor: pointer;
+ border: 0;
+ border-top: 1px solid #87c286;
+ border-right: 1px solid #0e780c;
+ border-left: 1px solid #0e780c;
+ border-bottom: 1px solid #0e780c;
+ box-shadow: 0 -1px 0 #0e780c, 0 1px 0 #fff;
+ width: 60px;
+ height: 60px;
+ border-radius: 2px;
+}
+
+input {
+  font-size: 16px;
+  padding: 6px;
+  width: 150px;
+  border: none;
+  border-bottom: 5px solid rgb(123, 226, 114);
+  border-left: 5px solid rgb(123, 226, 114);
+  border-right: 5px solid rgb(123, 226, 114);
+  border-top: 5px solid rgb(123, 226, 114);
+}
+input:focus {
+  outline: none;
+}
+
+      </style>    
+      <form><input id="output" type="text" value="" style="width:231px; height:30px"> </form>
+        <table id="table1">   
+       <tr><td><input id="buttlak" class='great_btn' type="button" value="Lakisey"/></td>
+       <td><input id="buttCE" class='great_btn' type="button" value="CE"/></td>
+       <td><input id="buttC" class='great_btn' type="button" value="C"/></td>
+       <td><input id="buttdell" class='great_btn' type="button" value="<="/></td>
+       <tr><td><input id="buttonedel" class='great_btn' type="button" value="1/x"/></td>
+        <td><input id="buttsqurd" class='great_btn' type="button" value="x\2"/></td>
+        <td><input id="butt" class='great_btn' type="button" value="√"/></td>
+        <td><input id="buttdel" class='great_btn' type="button" value="÷"/></td>
+        <tr><td><input id="butt7" class='great_btn' type="button" value="7"/></td>
+            <td><input id="butt8" class='great_btn' type="button" value="8"/></td>
+            <td><input id="butt9" class='great_btn' type="button" value="9"/></td>
+            <td><input id="buttdub" class='great_btn' type="button" value="*"/></td>
+            <tr><td><input id="butt4" class='great_btn' type="button" value="4"/></td>
+                <td><input id="butt5" class='great_btn' type="button" value="5"/></td>
+                <td><input id="butt6" class='great_btn' type="button" value="6"/></td>
+                <td><input id="buttmin" class='great_btn' type="button" value="-"/></td>
+                <tr><td><input id="butt1" class='great_btn' type="button" value="1"/></td>
+                    <td><input id="butt2" class='great_btn' type="button" value="2"/></td>
+                    <td><input id="butt3" class='great_btn' type="button" value="3"/></td>
+                    <td><input id="buttplus" class='great_btn' type="button" value="+"/></td>
+                    <tr><td><input id="buttminus" class='great_btn' type="button" value="+/-"/></td>
+                        <td><input id="butt0" class='great_btn' type="button" value="0"/></td>
+                        <td><input id="buttdot" class='great_btn' type="button" value=","/></td>
+                        <td><input id="butt10" class='great_btn' type="button" value="="/></td>
+        </table>
+
+  <script>
+    'use strict';
+
+
+    function Calculator() {
+    this.methods = {
+        "-": (a, b) => a - b,
+        "+": (a, b) => a + b
+    };
+    this.calculate = function(str) {
+        let split = str.split(' '),
+        a = +split[0],
+        op = split[1],
+        b = +split[2]
+    if (!this.methods[op] || isNaN(a) || isNaN(b)){
+        return NaN;
+    }
+    
+    return this.methods[op](a, b);
+    }
+
+    this.addMethod = function(name, func) {
+        this.methods[name] = func;
+    };
+}
+let calc = new Calculator;
+let powerCalc = new Calculator;
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+
+
+    butt1.onclick = function() {
+        document.querySelector("#output").value += "1";
+    }
+    butt2.onclick = function() {
+        document.querySelector("#output").value += "2";
+    }
+    butt3.onclick = function() {
+        document.querySelector("#output").value += "3";
+    }
+    butt4.onclick = function() {
+        document.querySelector("#output").value += "4";
+    }
+    butt5.onclick = function() {
+        document.querySelector("#output").value += "5";
+    }
+    butt6.onclick = function() {
+        document.querySelector("#output").value += "6";
+    }
+    butt7.onclick = function() {
+        document.querySelector("#output").value += "7";
+    }
+    butt8.onclick = function() {
+        document.querySelector("#output").value += "8";
+    }
+    butt9.onclick = function() {
+        document.querySelector("#output").value += "9";
+    }
+    butt0.onclick = function() {
+        document.querySelector("#output").value += "0";
+    }
+    buttplus.onclick = function() {
+        document.querySelector("#output").value += " + ";
+    }
+    butt10.onclick = function() {
+        document.querySelector("#output").value = powerCalc.calculate(document.querySelector("#output").value);
+    }
+    buttC.onclick = function() {
+        document.querySelector("#output").value = "";
+    }
+    buttCE.onclick = function() {
+        document.querySelector("#output").value = "";
+    }
+    buttdot.onclick = function() {
+        document.querySelector("#output").value += ".";
+    }
+    buttmin.onclick = function() {
+        document.querySelector("#output").value += " - ";
+    }
+    buttdub.onclick = function() {
+        document.querySelector("#output").value += " * ";
+    }
+    buttdel.onclick = function() {
+        document.querySelector("#output").value += " / ";
+    }
+    buttdell.onclick = function() {
+        document.querySelector("#output").value = document.querySelector("#output").value.slice(0, -1);
+    }
+    buttsqurd.onclick = function() {
+        let num = document.querySelector("#output").value
+        document.querySelector("#output").value = (num * num);
+    }
+    buttonedel.onclick = function() {
+        let num = document.querySelector("#output").value
+        document.querySelector("#output").value = (1/num);
+    }
+    buttminus.onclick = function() {
+        let num = document.querySelector("#output").value
+        document.querySelector("#output").value = -num;
+    }
+    buttlak.onclick = function() {
+        document.querySelector("#output").value = "заєбошив піздатий калькулятр";
+    }
+
+
+
+
+
+
+  </script>
+</body>
+</html>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+  <script>
+'use strict';
+let user = {
+  name: 'John',
+  surname: 'Smith'
+};
+
+
+let response = await fetch('E:\JAVA\USER', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json;charset=utf-8'
+  },
+  body: JSON.stringify(user)
+});
+
+let result = await response.json();
+alert(result.message);
+  </script>
+
+</body>
+</html>

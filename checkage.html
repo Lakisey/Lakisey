@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+<body>
+  <table id="table">
+    <tr>
+      <td><input id="elem1" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt1" type="button" value="Вибрати"/>
+        <div id="str1"></td>
+
+      <td><input id="elem2" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt2" type="button" value="Вибрати"/>
+        <div id="str2"></td>
+
+      <td><input id="elem3" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt3" type="button" value="Вибрати"/>
+        <div id="str3"></td>
+
+      <td><input id="elem4" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt4" type="button" value="Вибрати"/>
+        <div id="str4"></td>
+
+      <td><input id="elem5" type="text" name="quantity" placeholder="Фільм">
+        <input id="butt5" type="button" value="Вибрати"/>
+        <div id="str5"></td>          
+    </tr>
+    <tr><td><td><td><input id="butt6" type="button" value="Рандомайз"/>
+      <div id="str6"></td>
+    </tr>
+  </table>
+
+  <script>
+    'use strict';
+  butt1.onclick = function() {
+    let val1 = document.getElementById('elem1').value;
+    document.getElementById('str1').innerHTML="Фільм прийнято";
+    allFilms.push(val1)
+  };
+  butt2.onclick = function() {
+    let val2 = document.getElementById('elem2').value;
+    document.getElementById('str2').innerHTML="Фільм прийнято";
+    allFilms.push(val2)
+  };
+  butt3.onclick = function() {
+    let val3 = document.getElementById('elem3').value;
+    document.getElementById('str3').innerHTML="Фільм прийнято";
+    allFilms.push(val3)
+  };
+  butt4.onclick = function() {
+    let val4 = document.getElementById('elem4').value;
+    document.getElementById('str4').innerHTML="Фільм прийнято";
+    allFilms.push(val4)
+  };
+  butt5.onclick = function() {
+    let val5 = document.getElementById('elem5').value;
+    document.getElementById('str5').innerHTML="Фільм прийнято";
+    allFilms.push(val5)
+  };
+
+
+  
+  function checkFilm(film){
+    while(true){
+        if (!film.length) {
+        film = prompt('Вводь давай!!!','');
+    }
+        else break
+    }
+    allFilms.push(film)
+    };
+
+let allFilms = []; 
+function RandArray(array){
+    let rand = Math.random() * array.length | 0;
+    let rValue = array[rand];
+    return rValue;
+}
+RandArray(allFilms);
+
+butt6.onclick = function() {
+    document.getElementById('str6').innerHTML="Дивимось фільм: " + RandArray(allFilms);
+  };
+
+
+
+  </script>
+</body>
+</html>
+
